@@ -1,0 +1,21 @@
+<h1> <%= @genre.name %>:</h1>
+<div>
+<% if @genre.artists.count > 0 %>
+  <h4>Artists:</h4>
+  <div>
+    <% @genre.artists.each do |a| %>
+    <p> <%= link_to a.name, artist_path(a) %> </p>
+    <% end %>
+<% end %>
+  </div>
+</div>
+<div>
+<% if @genre.songs.count > 0 %>
+  <h4>Songs:</h4>
+  <div>
+    <% @genre.songs.each do |s| %>
+    <p> <%= link_to s.name, song_path(s) %> </p>
+    <% end %>
+  </div>
+<% end %>
+</div>

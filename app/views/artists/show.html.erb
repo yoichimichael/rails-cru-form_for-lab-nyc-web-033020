@@ -1,0 +1,25 @@
+<h1> <%= @artist.name %> </h1>
+  <p><%= @artist.bio %></p>
+<div>
+  <h4>Songs:</h4>
+  <div>
+    <% if @artist.songs.count > 0 %>
+      <% @artist.songs.each do |s| %>
+      <p> <%= s.name %> </p>
+      <% end %>
+    <% else %>
+      <p><%= @artist.name %> currently has no songs</p>
+    <% end %>
+  </div>
+</div>
+<div>
+<% if @artist.genres.count > 0 %>
+  <h4>Genres:</h4>
+  <div>
+  
+    <% @artist.genres.each do |g| %>
+    <p> <%= g.name %> </p>
+    <% end %>
+  </div>
+<% end %>
+</div>
